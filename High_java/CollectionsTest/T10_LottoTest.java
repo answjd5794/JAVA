@@ -104,19 +104,20 @@ public class T10_LottoTest {
 
 		// 만약 money가 1000원 이상일 때 1000원당 하나씩 행운의 로또번호를 부여한다.
 		if (money >= 1000) {
-			//money/1000 보다 적게 행운의 숫자를 부여한다.
-			for (int i = 0; i < money / 1000; i++) {
-				//로또 번호가 순서가 없기 때문에 Set 사용
+			// money/1000 보다 적게 행운의 숫자를 부여한다.
+			for (int i = 1; i < money / 1000 + 1; i++) {
+				// 로또 번호가 중복이 안되기 때문에 Set 사용
 				Set<Integer> lotto = new HashSet<>();
-				while (lotto.size() < 7) {
+				// 로또번호는 6개이며 1~45까지
+				while (lotto.size() < 6) {
 					// 중복되지 않은 5개의 데이터 set에서 저장
 					int lottoNum = (int) (Math.random() * 45 + 1);
 					lotto.add(lottoNum);
 				}
-				System.out.println("행운의 Lotto번호 :" + lotto);
+				System.out.println("행운의 Lotto번호" + i + ":" + lotto);
 			}
-			//받은 금액 : money , 거스름돈 : money/1000 의 나머지=> money%1000 
-			System.out.println("받은 금액은 " + money + "이고 거스름돈은 " + money%1000 + "입니다.");
+			// 받은 금액 : money , 거스름돈 : money/1000 의 나머지=> money%1000
+			System.out.println("받은 금액은 " + money + "이고 거스름돈은 " + money % 1000 + "입니다.");
 
 		} else {
 			System.out.println("돈 더 갖고와.");
