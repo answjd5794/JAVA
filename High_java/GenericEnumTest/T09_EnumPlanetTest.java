@@ -25,17 +25,20 @@ public class T09_EnumPlanetTest {
 		해왕성(24622);
 
 		// 면적을 구하는 변수 선언
-		private int radius;
-		private int area;
+		private double radius;
+		private double area;
 
 		// planet 생성자 만들기 (묵시적으로 private)
-		Planet(int radius) {
+		Planet(double radius) {
 			this.radius = radius;
-			area = 2 * this.radius;
+			// 행성의 면적 => 반지름의 2제곱*파이
+			area = Math.pow(radius, 2)*Math.PI;
+			// 지름만 구할 때
+//			area = 2 * radius;
 		}
 
 		// 값을 반환하는 메서드
-		public int getArea() {
+		public double getArea() {
 			return area;
 		}
 	}
