@@ -4,7 +4,6 @@ public class T02_ThreadTest {
 	public static void main(String[] args) {
 
 		// 멀티 스레드 프로그램 방식
-
 		// 방법 1: Thread 클래스를 상속한 클래스의 인스턴스를 생성한 후 이 인스턴스의 start() 메서드를 호출한다.
 		MyThread1 th1 = new MyThread1();
 		th1.start();
